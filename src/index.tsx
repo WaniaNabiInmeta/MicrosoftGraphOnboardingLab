@@ -20,8 +20,11 @@ pca.initialize().then(() => {
       const payload = event.payload as AuthenticationResult;
       const account = payload.account;
       pca.setActiveAccount(account);
+    }if(event.eventType === EventType.LOGIN_FAILURE){
+      console.log(event);
     }
   })
+
 
   const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
